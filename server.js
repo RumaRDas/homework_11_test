@@ -31,14 +31,9 @@ app.get("/assets/js/index.js",(req, res) =>{
 });
 
 app.get("/api/notes", (req, res) => {
-//     fs.readFile(path.join(__dirname,"db/db.json"), "utf8",((err, data) =>{
-//     console.log(noteArr);
-//     res.send(noteArr);
-//   }));
+// Reade file from db.json file
   fs.readFile(path.join(__dirname, "db/db.json"), 'utf8', (error, data) => {
     if (error) {
-      // oh no!
-      // (you should do something here, like res.status(500) maybe.
       res.writeHead(500);
       return res.end('Error loading index.html');
     }
@@ -46,6 +41,7 @@ app.get("/api/notes", (req, res) => {
       noteArr = JSON.parse(data);
     }
   });
+  res.json(noteArr);
 });
 
 app.post("/api/notes",(req, res) =>{
