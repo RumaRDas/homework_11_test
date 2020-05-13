@@ -7,7 +7,6 @@ Generate Team is a dynamically  generates ` Note Taker `   application. Node.js 
 In this application users can save note  and open note for read in db.json file. Users can delete any othay wants.
 ____
 
-   [View](https://rumardas.github.io/noteTaker/)
 
 ##  Applications Uses in this projects
     * Html
@@ -22,7 +21,7 @@ ____
         $ npm install uuid4
 
 
-[Heroku Link](https://drive.google.com/file/d/1PqGyyB_0aFpz0nCpkar_aOfLTUyggktc/view/)
+[Heroku Link]()
 
 ## page view
 
