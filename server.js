@@ -57,17 +57,14 @@ app.delete("/api/notes/:id", (req, res) => {
     if (error) {
       throw error;
     }
-    console.log(req.params.id); //req.params.id X data.id
+    // console.log(req.params.id);
     noteArr = JSON.parse(data);
     let result = noteArr.filter(note => note.id != req.params.id);
     fs.writeFile(path.join(__dirname, 'db/db.json'), JSON.stringify(result), (error) => {
       if (error) {
-        // oh no!
         throw error;
       }
       return res.json(result);
-      //res.json(JSON.parse(noteArr));
-
     });
   });
 
@@ -89,7 +86,7 @@ app.get("/notes", (req, res) => {
 });
 
 //Getting page of index.html
-app.get("*", (req, res) => {
+app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public/index.html"));
 });
 
